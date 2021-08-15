@@ -1,0 +1,233 @@
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+            font-family: "Barlow", sans-serif;
+        }
+
+        body {
+            height: 100vh;
+        }
+
+        input {
+            background-color: transparent;
+            border: 1px solid #8d83be;
+            height: 22px;
+            width: 160px;
+            color: rgb(61, 61, 61);
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        .asset-button {
+            background-color: #8d83be;
+            border-radius: 5px;
+            padding: 0 10px;
+            padding-bottom: 4px;
+            display: flex;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .asset-button:hover {
+            background-color: #a398db;
+        }
+
+        .container {
+            width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size: 20px;
+        }
+
+        h2 {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .aave-table li {
+            border-radius: 3px;
+            padding: 5px 30px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+
+        .aave-table .table-header {
+            /* background-color: #95a5a6; */
+            font-size: 14px;
+            /* text-transform: uppercase; */
+            letter-spacing: 0.03em;
+        }
+
+        .aave-table .table-row {
+            background-color: #fff;
+            box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .aave-table .col-1 {
+            flex-basis: 5%;
+        }
+
+        .aave-table .col-2 {
+            flex-basis: 25%;
+        }
+
+        .aave-table .col-3 {
+            flex-basis: 20%;
+        }
+
+        .aave-table .col-4 {
+            flex-basis: 20%;
+        }
+
+        .aave-table .col-5 {
+            flex-basis: 20%;
+        }
+
+        .aave-table .col-6 {
+            flex-basis: 10%;
+        }
+    </style>
+</head>
+<!-- MATIC DAI USDC USDT WETH WBTC AAVE -->
+
+<body>
+    <div style="margin: 0 auto">
+        <div class="container">
+            <div class="header" style="display: flex; justify-content: center; align-items:center">
+                <img src="https://assets.trustwalletapp.com/blockchains/ethereum/assets/0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9/logo.png"
+                    style="height: 35px; margin-right: 10px;">
+                <h2>AAVE.COM BANK</h2>
+            </div>
+            <ul class="aave-table">
+                <li class="table-header">
+                    <div class="col col-1">Asset</div>
+                    <div class="col col-2"></div>
+                    <div class="col col-3">Wallet Balance</div>
+                    <div class="col col-4">aTokens</div>
+                    <div class="col col-5">APY</div>
+                    <div class="col col-6"></div>
+                </li>
+                <li class="table-row">
+                    <div id="" class="col col-1" data-label="Token Logo"><img
+                            src="https://assets.trustwalletapp.com/blockchains/ethereum/assets/0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0/logo.png"
+                            style="height: 35px; margin-right: 10px;"></div>
+                    <div id="" class="col col-2" data-label="Asset">MATIC</div>
+                    <div id="inwallet-MATIC" class="col col-3" data-label="Wallet Balance">-</div>
+                    <div id="deposit-amWMATIC" class="col col-4" data-label="Deposit">-</div>
+                    <div id="apy-MATIC" class="col col-5" data-label="APY">-</div>
+                    <div id="" class="col col-6" data-label="Approve">
+                        <input type="text" name="amount-MATIC" placeholder="Amount" style="width: 100px;" />
+                        <div>
+                            <div class="asset-button" name="MATIC" id="deposit-button">Deposit</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="table-row">
+                    <div id="" class="col col-1" data-label="Token Logo"><img
+                            src="https://assets.trustwalletapp.com/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png"
+                            style="height: 35px; margin-right: 10px;"></div>
+                    <div id="" class="col col-2" data-label="Asset">DAI</div>
+                    <div id="inwallet-DAI" class="col col-3" data-label="Wallet Balance">-</div>
+                    <div id="deposit-amDAI" class="col col-4" data-label="Deposit">-</div>
+                    <div id="apy-DAI" class="col col-5" data-label="APY">-</div>
+                    <div id="" class="col col-6" data-label="Approve">
+                        <input type="text" name="amount-DAI" placeholder="Amount" style="width: 100px;" />
+                        <div>
+                            <div class="asset-button" name="DAI" id="deposit-button">Deposit</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="table-row">
+                    <div id="" class="col col-1" data-label="Token Logo"><img
+                            src="https://assets.trustwalletapp.com/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png"
+                            style="height: 35px; margin-right: 10px;"></div>
+                    <div id="" class="col col-2" data-label="Asset">USDC</div>
+                    <div id="inwallet-USDC" class="col col-3" data-label="Wallet Balance">-</div>
+                    <div id="deposit-amUSDC" class="col col-4" data-label="Deposit">-</div>
+                    <div id="apy-USDC" class="col col-5" data-label="APY">-</div>
+                    <div id="" class="col col-6" data-label="Approve">
+                        <input type="text" name="amount-USDC" placeholder="Amount" style="width: 100px;" />
+                        <div>
+                            <div class="asset-button" name="USDC" id="deposit-button">Deposit</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="table-row">
+                    <div id="" class="col col-1" data-label="Token Logo"><img
+                            src="https://assets.trustwalletapp.com/blockchains/ethereum/assets/0xdAC17F958D2ee523a2206206994597C13D831ec7/logo.png"
+                            style="height: 35px; margin-right: 10px;"></div>
+                    <div id="" class="col col-2" data-label="Asset">USDT</div>
+                    <div id="inwallet-USDT" class="col col-3" data-label="Wallet Balance">-</div>
+                    <div id="deposit-amUSDT" class="col col-4" data-label="Deposit">-</div>
+                    <div id="apy-USDT" class="col col-5" data-label="APY">-</div>
+                    <div id="" class="col col-6" data-label="Approve">
+                        <input type="text" name="amount-USDT" placeholder="Amount" style="width: 100px;" />
+                        <div>
+                            <div class="asset-button" name="USDT" id="deposit-button">Deposit</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="table-row">
+                    <div id="" class="col col-1" data-label="Token Logo"><img
+                            src="https://assets.trustwalletapp.com/blockchains/ethereum/assets/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2/logo.png"
+                            style="height: 35px; margin-right: 10px;"></div>
+                    <div id="" class="col col-2" data-label="Asset">WETH</div>
+                    <div id="inwallet-WETH" class="col col-3" data-label="Wallet Balance">-</div>
+                    <div id="deposit-amWETH" class="col col-4" data-label="Deposit">-</div>
+                    <div id="apy-WETH" class="col col-5" data-label="APY">-</div>
+                    <div id="" class="col col-6" data-label="Approve">
+                        <input type="text" name="amount-WETH" placeholder="Amount" style="width: 100px;" />
+                        <div>
+                            <div class="asset-button" name="WETH" id="deposit-button">Deposit</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="table-row">
+                    <div id="" class="col col-1" data-label="Token Logo"><img
+                            src="https://s2.coinmarketcap.com/static/img/coins/64x64/3717.png"
+                            style="height: 35px; margin-right: 10px;"></div>
+                    <div id="" class="col col-2" data-label="Asset">WBTC</div>
+                    <div id="inwallet-WBTC" class="col col-3" data-label="Wallet Balance">-</div>
+                    <div id="deposit-amWBTC" class="col col-4" data-label="Deposit">-</div>
+                    <div id="apy-WBTC" class="col col-5" data-label="APY">-</div>
+                    <div id="" class="col col-6" data-label="Approve">
+                        <input type="text" name="amount-WBTC" placeholder="Amount" style="width: 100px;" />
+                        <div>
+                            <div class="asset-button" name="WBTC" id="deposit-button">Deposit</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="table-row">
+                    <div id="" class="col col-1" data-label="Token Logo"><img
+                            src="https://assets.trustwalletapp.com/blockchains/ethereum/assets/0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9/logo.png"
+                            style="height: 35px; margin-right: 10px;"></div>
+                    <div id="" class="col col-2" data-label="Asset">AAVE</div>
+                    <div id="inwallet-AAVE" class="col col-3" data-label="Wallet Balance">-</div>
+                    <div id="deposit-amAAVE" class="col col-4" data-label="Deposit">-</div>
+                    <div id="apy-AAVE" class="col col-5" data-label="APY">-</div>
+                    <div id="" class="col col-6" data-label="Approve">
+                        <input type="text" name="amount-AAVE" placeholder="Amount" style="width: 100px;" />
+                        <div>
+                            <div class="asset-button" name="AAVE" id="deposit-button">Deposit</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

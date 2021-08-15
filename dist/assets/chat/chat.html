@@ -1,0 +1,256 @@
+<html>
+    <head>
+        <style>
+            :root {
+                --mainColor: mediumpurple;
+                --secondaryColor: palevioletred;
+                --contrastColor: #122938;
+            }
+            html {
+                /* border: 3px solid red; */
+                padding: 0px;
+                margin: 0px;
+                height: 100%; 
+            }
+            body {
+                /* border: 3px solid green; */
+                padding: 0px;
+                margin: 0px;
+                height: 100%;
+            }
+            
+            #roomTitle {
+                display: flex; 
+                flex-direction: row; 
+                padding-top: 10px; 
+                background-color: var(--mainColor);
+                width: 100%;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                
+            }
+
+            #chatWindow {
+                background-color: var(--contrastColor);
+                background-image: radial-gradient(#222680 0.5px, #091a25 0.5px);
+                background-size: 10px 10px; 
+                height: 1350px; 
+                width: 350px; 
+                display: flex; 
+                flex-direction: column;
+                gap: 0px;
+                color: rgb(23, 21, 39);
+                /* justify-content: space-between; */
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                margin-left: 0px;
+                transition: margin 1s;
+                transition-timing-function: ease;
+            }
+
+            /* .slideOut {
+                 margin-left: 300px; 
+            } */
+
+            #messageInput {
+                display: flex; 
+                flex-direction: row; 
+                
+                align-content: center; 
+                gap: 0px;
+                width: 100%;
+                font-size: 0.5rem;
+            }
+
+            #messages {
+                height: 350px;
+                background-color: rgb(224, 223, 221); 
+                width: 100%;
+                overflow-y: auto;
+                padding: 0px 10px;
+                box-sizing: border-box;
+                
+            }
+
+            #sendButton {
+                margin: 0px;
+                padding: 10px;
+                background-color: var(--mainColor);
+                border: none;
+                color: white;
+                flex-grow: 1;
+            }
+
+            #textInput {
+                padding: 10px;
+                border: none;
+                width: 150px;
+                flex-grow: 2;
+            }
+
+            #chatUsers {
+                display: block;
+                width: 100%; 
+                height: 400px;
+                padding: 0px 20px;
+                color: white;
+                box-sizing: border-box;
+                /* background-color: rgb(137, 157, 177); */
+            }
+
+            #chatUsers__display {
+                overflow-y: auto;
+                box-sizing: border-box;
+                width: 100%;
+                height: 80%;
+                display: flex;
+                flex-direction: column;
+            }
+
+            #welcome {
+                background-color: rgb(229, 245, 209);
+                color: rgb(59, 56, 56);
+                width: 80%;
+                margin: 20px auto 0px auto;
+                border-radius: 10px;
+                text-align: center;
+                padding: 0px 10px;
+            }
+
+            #chatActions {
+                width: 80%;
+                display: flex;
+                flex-direction: row;
+                margin: 0px auto;
+            }
+
+            #chatTabs {
+                width: 100%;
+                display: flex;
+                overflow-x: auto;
+                min-height: 50px;
+            }
+
+            .chatButton {
+                
+                border: none;
+                background-color: var(--secondaryColor);
+                color:white;
+                font-weight: bold;
+                padding: 10px;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+
+            }
+
+            .chatButtonActive {
+                border: 3px solid var(--mainColor);
+                color:var(--mainColor);
+                border-radius: 10px;
+                
+            }
+
+            #leftButton {
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+            }
+
+            #rightButton {
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+
+            #leaveButton {
+                background-color: var(--contrastColor); 
+                color: white; 
+                border: none; 
+                padding: 10px 20px; 
+                border-radius: 10px;
+                margin: auto 10px auto auto;
+                align-self: center;
+            }
+
+            .chatUser {
+                border: 3px solid var(--secondaryColor);
+                border-radius: 10px;
+                padding: 5px 10px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin: 0px;
+            }
+
+            .chatUser strong {
+                align-self: center;
+            }
+
+            .pmButton {
+                background-color: var(--mainColor);
+                border-radius: 5px;
+                border: none;
+                padding: 5px 10px;
+                color: white;
+            }
+
+            .eventText {
+                font-size: 1rem;
+                color: var(--mainColor);
+                text-align: center;
+               
+            }
+        </style>
+
+    </head>
+    <body>
+        
+        <div id="chatWindow">
+            <header id="roomTitle">
+                <h2 id="chatroomName" style="margin: 0px; margin-left: 10px;" >room x</h2>
+                <input 
+                    id="leaveButton"
+                    type="button" 
+                    name="leave" 
+                    value="leave" 
+                />
+            </header>
+            <section id="welcome">
+                <p>
+                    Welcome to a common space. A place where you can chat with other Atlantis users.
+                </p>
+            </section>
+            <section id="chatUsers" >
+                <header id="chatUsers__title">
+                    <h4>USERS:</h4>
+                </header>
+                <div id="chatUsers__display">
+                    user data goes here
+                </div>
+            </section>
+            <!-- <section id="chatActions">
+                <button class="chatButton" id="leftButton">DM</button>
+                <button class="chatButton">Image</button>
+                <button class="chatButton" id="rightButton">video</button>
+            </section> -->
+            <section id="chatTabs">
+                <!-- <button class="chatButton">public</button> -->
+            </section>
+            <div id="messages">
+            </div>
+                <div id="messageInput">
+                    
+                    <input 
+                        id="textInput"
+                        type="text" 
+                        name="message" 
+                        placeholder="Message" 
+                    />
+                    <input 
+                        id="sendButton"
+                        type="button" 
+                        name="chat" 
+                        value="send" 
+                    />
+                </div>
+        </div>
+       
+    </body>
+</html>
